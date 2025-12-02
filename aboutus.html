@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AYURA — Skin & Aesthetics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+  serif: ['Playfair Display', 'serif'],
+  body: ['Inter', 'sans-serif'],
+  optima: ['"Optima Pro Medium"', 'sans-serif'], // added here
+}
+,
+          colors: {
+            ayuraBrown: '#1a0f0a',
+            ayuraGold: '#c69c6d',
+            ayuraCream: '#f5e8d8',
+            ayuraSoft: '#e7d2b8'
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .fade-up { opacity: 0; transform: translateY(20px); transition: all .8s ease; }
+    .fade-up.show { opacity: 1; transform: translateY(0); }
+      /* Moving gradient blobs */
+    @keyframes float1 { 0%{transform:translate(0,0);} 50%{transform:translate(40px, -60px);} 100%{transform:translate(0,0);} }
+    @keyframes float2 { 0%{transform:translate(0,0);} 50%{transform:translate(-50px,40px);} 100%{transform:translate(0,0);} }
+    @keyframes float3 { 0%{transform:translate(0,0);} 50%{transform:translate(60px,20px);} 100%{transform:translate(0,0);} }
+  </style>
+</head>
+<body class="bg-ayuraBrown text-ayuraCream font-body relative overflow-x-hidden">
+<h1 class="font-optima"></h1>
+
+
+<!-- PREMIUM MOVING BACKGROUND BLOBS LIKE UNCOVER -->
+<div class="pointer-events-none fixed -top-40 -left-40 w-[520px] h-[520px] bg-[#d8ac6f55] rounded-full blur-[180px] opacity-50 animate-[float1_10s_ease-in-out_infinite]"></div>
+<div class="pointer-events-none fixed top-1/3 right-[-220px] w-[480px] h-[480px] bg-[#f5e8d855] rounded-full blur-[200px] opacity-50 animate-[float2_12s_ease-in-out_infinite]"></div>
+<div class="pointer-events-none fixed bottom-[-240px] left-1/4 w-[640px] h-[640px] bg-[#c69c6d44] rounded-full blur-[210px] opacity-40 animate-[float3_14s_ease-in-out_infinite]"></div>
+
+<!-- NAVBAR -->
+<header class="absolute top-4 left-4 right-4 bg-[#E4BC93]/80 text-[#5b2b0e] backdrop-blur-xl z-50 border border-[#5D3C62]/20 rounded-[1.75rem]">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+  <a href="index.html">
+  <img src="logo.png" alt="AYURA Logo" class="w-[10rem] h-auto object-contain" />
+</a>
+
+
+  <!-- <h1 class="font-serif text-xl tracking-wide text-[#5b2b0e]">AYURA</h1> -->
+</div>
+
+
+    <!-- Navigation + Book Now (Desktop) -->
+    <div class="hidden md:flex items-center gap-8">
+      <nav class="hidden md:flex items-center gap-10 text-sm font-medium">
+
+    <!-- Dropdown style (UNCOVER-style) -->
+    <!-- Navigation Buttons -->
+<div class="nav-buttons">
+  <a href="#" class="btn2">LASER</a>
+  <a href="skin.html" class="btn2">SKIN</a>
+  <a href="hair.html" class="btn2">HAIR</a>
+  <a href="ivdrips.html" class="btn2">BODY</a>
+  <a href="#" class="btn2">LOCATIONS</a>
+  <a href="#" class="btn2">ABOUT US</a>
+  <a href="#" class="btn2">BLOGS</a>
+</div>
+
+<style>
+/* Global box-sizing and border defaults */
+*, ::after, ::before {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+}
+
+/* Reset links */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Button style (keeps original font) */
+.btn2 {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--size-10, 10px); /* same as original snippet */
+    padding: 10px 20px;
+    color: #5b2b0e;
+    font-weight: bolder; /* original font weight */
+    text-decoration: none; /* original snippet */
+    border-radius: 6px;
+    transition: color 0.4s ease; /* slow color change */
+}
+
+/* Underline effect from center */
+.btn2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 2px; /* reduce gap between text and underline */
+    width: 0%;
+    height: 2px;
+    background-color: #5b2b0e;
+    transform: translateX(-50%);
+    transition: width 0.6s ease; /* slower underline animation */
+}
+
+/* Hover state */
+.btn2:hover {
+    color: black; /* text color on hover */
+}
+
+.btn2:hover::after {
+    width: 100%;
+}
+</style>
+
+
+      
+
+    </div>
+    
+<!-- <div class="flex gap-4 justify-end">
+  <a href="#locations" class="text-[#5b2b0e] hover:text-black transition">Locations</a>
+  <a href="#about" class="text-[#5b2b0e] hover:text-black transition">About Us</a>
+  <a href="#blog" class="text-[#5b2b0e] hover:text-black transition">Media & Blog</a>
+</div> -->
+
+
+
+     <a href="#book" class="ml-6 px-6 py-2 bg-[#5b2b0e] text-[#DAB683] rounded-full font-semibold shadow hover:bg-[#3f1a0d] hover:scale-105 transition hidden sm:inline-block">
+    Book Now
+</a>
+
+  </nav>
+
+    <!-- Mobile Toggle Button -->
+    <button id="menuToggle" class="md:hidden p-3 bg-white/20 rounded-full backdrop-blur-xl border border-white/20">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5m-16.5 6.75h16.5" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+
+<!-- MOBILE MENU (Slide From Right) -->
+<div id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-[#5b2b0e]/95 backdrop-blur-xl border-l border-white/10 z-50 transform translate-x-full transition-transform duration-300 md:hidden">
+  <div class="p-6 flex flex-col gap-6 text-lg tracking-wide text-[#DAB683]">
+    <a href="#home" class="hover:text-[#DAB683] transition">Home</a>
+    <a href="#services" class="hover:text-[#DAB683] transition">Services</a>
+    <a href="#about" class="hover:text-[#DAB683] transition">About</a>
+    <a href="#contact" class="hover:text-[#DAB683] transition">Contact</a>
+    <button id="closeMenu" class="mt-6 px-6 py-2 bg-[#DAB683] text-[#5b2b0e] rounded-full font-semibold shadow hover:scale-105 transition">Close</button>
+  </div>
+</div>
+
+
+  <div class="pt-24"></div> <!-- space under fixed header -->
+
+<!-- HERO SECTION -->
+
+
+<!-- HERO SECTION -->
+<section class="relative w-full h-[100vh]">
+  <img src="about.jpg" alt="AYURA Hero" class="w-full h-full object-cover brightness-75">
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-ayuraCream px-4">
+    <h1 class="text-4xl md:text-6xl font-optima font-bold mb-6">Luxury Aesthetic Care, At Your Doorstep</h1>
+    <a href="#book" class="px-8 py-4 bg-[#8f4315] hover:bg-[#a96332] text-[#f3d3b8] rounded-full font-semibold text-lg shadow-lg transition">Book an Appointment</a>
+  </div>
+</section>
+<!-- AYURA STORY SECTION -->
+<section class="bg-[#281304] text-[#f3d3b8] py-20 px-6 md:px-20">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#a96332]">Who We Are</h2>
+    <p class="text-lg leading-relaxed">AYURA Home Services brings premium aesthetic care directly to your doorstep. We provide expert skin, hair, and IV therapy treatments with the same safety, precision, and luxury as our clinic.</p>
+
+    <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#a96332]">Our Mission</h2>
+    <p class="text-lg leading-relaxed">Our mission is to make aesthetic wellness convenient, comfortable, and deeply personalised. From professional treatments at home to certified aestheticians and hospital-grade hygiene, we ensure every experience is seamless, private, and results-driven.</p>
+
+    <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#a96332]">Our Story</h2>
+    <p class="text-lg leading-relaxed">AYURA began with the vision to blend clinical expertise with spa-like comfort. What started as a small dream has grown into a complete home-aesthetic service experience. Every service is designed to rejuvenate, restore, and enhance your natural beauty—right at your doorstep.</p>
+  </div>
+</section>
+
+
+<!-- ===== Why Choose Us Section ===== -->
+<section class="w-full bg-[#281304] py-12 px-6 md:px-20 text-center rounded-2xl my-10">
+  <h1 class="text-3xl md:text-4xl font-serif font-bold text-[#a96332] mb-4">
+    Why Choose Us?
+  </h1>
+  
+</section>
+
+
+
+<!-- ===== Custom Responsive Square Carousel ===== -->
+<section class="w-full flex justify-center my-10 px-4">
+
+  <div class="relative w-[420px] sm:w-[320px] h-[420px] sm:h-[320px] overflow-hidden rounded-2xl shadow-xl" id="squareCarousel">
+
+    <!-- Track -->
+    <div class="carousel-track flex h-full w-full transition-transform duration-500">
+      <div class="carousel-slide w-full h-full flex-shrink-0">
+        <img src="image1.jpg" class="w-full h-full object-cover" />
+      </div>
+      <div class="carousel-slide w-full h-full flex-shrink-0">
+        <img src="image2.jpg" class="w-full h-full object-cover" />
+      </div>
+      <div class="carousel-slide w-full h-full flex-shrink-0">
+        <img src="image3.jpg" class="w-full h-full object-cover" />
+      </div>
+    </div>
+
+    <!-- Left & Right Arrows -->
+    <button id="prevBtn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white text-black px-2 py-1 rounded-full font-bold text-xl sm:text-lg">❮</button>
+    <button id="nextBtn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white text-black px-2 py-1 rounded-full font-bold text-xl sm:text-lg">❯</button>
+
+    <!-- Indicators -->
+    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+      <div class="dot w-3 h-3 bg-white/50 rounded-full cursor-pointer"></div>
+      <div class="dot w-3 h-3 bg-white/50 rounded-full cursor-pointer"></div>
+      <div class="dot w-3 h-3 bg-white/50 rounded-full cursor-pointer"></div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* ===== Custom Responsive Carousel Script ===== */
+const track = document.querySelector("#squareCarousel .carousel-track");
+const slides = document.querySelectorAll("#squareCarousel .carousel-slide");
+const dots = document.querySelectorAll("#squareCarousel .dot");
+let currentIndex = 0;
+
+// Function to get slide width dynamically
+function getSlideWidth() {
+  return document.querySelector("#squareCarousel").clientWidth;
+}
+
+// Update carousel position
+function updateCarousel() {
+  const slideWidth = getSlideWidth();
+  track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  dots.forEach((dot, i) => {
+    dot.style.background = i === currentIndex ? "white" : "rgba(255,255,255,0.4)";
+  });
+}
+
+// Arrow buttons
+document.getElementById("nextBtn").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateCarousel();
+});
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateCarousel();
+});
+
+// Dot click jump
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    currentIndex = i;
+    updateCarousel();
+  });
+});
+
+// Auto-slide
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateCarousel();
+}, 3500);
+
+// Handle window resize
+window.addEventListener("resize", updateCarousel);
+
+// Initialize
+updateCarousel();
+</script>
+
+
+<script>
+document.getElementById("whatsappForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = encodeURIComponent(document.getElementById("name").value);
+  const email = encodeURIComponent(document.getElementById("email").value);
+  const phone = encodeURIComponent(document.getElementById("phone").value);
+  const service = encodeURIComponent(document.getElementById("service").value);
+
+  // Your WhatsApp Number (country code + number, no + or 0)
+  const whatsappNumber = "919182830417"; // Replace with your number
+
+  const message = `Hello,%0A%0ANew Consultation Request:%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}`;
+
+  // Redirect to WhatsApp
+  window.location.href = `https://wa.me/${whatsappNumber}?text=${message}`;
+});
+</script>
+
+
+ <!-- UNCOVER‑STYLE PREMIUM FOOTER -->
+<footer class="bg-ayuraBrown/60 backdrop-blur-xl border-t border-white/10 py-20 text-ayuraCream">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+
+    <!-- LOGO + DESCRIPTION -->
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <a href="/">
+  <img src="logo.png" alt="AYURA Logo" class="w-[10rem] h-auto object-contain" />
+</a>
+
+      </div>
+      <p class="text-sm text-ayuraSoft/80 leading-relaxed max-w-xs">Where luxury meets science. Premium aesthetic treatments designed to enhance natural beauty.</p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div>
+      <h4 class="font-serif text-xl mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-ayuraSoft/80 text-sm">
+        <li><a href="#home" class="hover:text-ayuraGold transition">Home</a></li>
+        <li><a href="#services" class="hover:text-ayuraGold transition">Services</a></li>
+        <li><a href="#about" class="hover:text-ayuraGold transition">About</a></li>
+        <li><a href="#contact" class="hover:text-ayuraGold transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div>
+      <h4 class="font-serif text-xl mb-4">Treatments</h4>
+      <ul class="space-y-2 text-ayuraSoft/80 text-sm">
+        <li>IV Drips</li>
+        <li>Chemical Peels</li>
+        <li>PRP for Hair</li>
+        <li>Skin Rejuvenation</li>
+      </ul>
+    </div>
+
+    <!-- CONTACT INFO -->
+    <div>
+      <h4 class="font-serif text-xl mb-4">Connect</h4>
+      <p class="text-sm text-ayuraSoft/80">Email: support@ayura.com</p>
+      <p class="text-sm text-ayuraSoft/80">Phone: +91 98765 43210</p>
+      <p class="text-sm text-ayuraSoft/80">Hyderabad, India</p>
+      <div class="flex gap-4 mt-4 text-ayuraGold">
+        <span class="cursor-pointer hover:scale-110 transition">Instagram</span>
+        <span class="cursor-pointer hover:scale-110 transition">Facebook</span>
+        <span class="cursor-pointer hover:scale-110 transition">YouTube</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM COPYRIGHT -->
+  <div class="text-center mt-14 text-xs text-ayuraSoft/70">
+    © <span id="year"></span> AYURA Skin & Aesthetics. All Rights Reserved.
+  </div>
+</footer>
+<!-- WHATSAPP CTA -->
+<a href="https://wa.me/919876543210" target="_blank" class="fixed bottom-20 right-4 z-50 w-12 h-12 md:w-14 md:h-14 bg-[#DAB683] text-[#5b2b0e] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 md:w-7 md:h-7">
+    <path d="M12.04 2C6.48 2 2 6.48 2 12c0 2.1.55 4.06 1.5 5.8L2 22l4.3-1.5c1.72.96 3.65 1.5 5.74 1.5 5.56 0 10.04-4.48 10.04-10S17.6 2 12.04 2zm5.48 14.7c-.24.68-1.37 1.3-1.9 1.39-.49.09-1.1.13-3.3-1.01-2.9-1.55-4.75-4.33-4.89-4.53-.14-.2-1.15-1.47-1.15-2.8s.86-2.1 1.16-2.38c.3-.28.65-.28.87-.28.22 0 .43.01.61.01.2 0 .46-.07.71.53.24.6.8 2.05.87 2.2.08.15.12.33.03.53-.09.2-.13.34-.25.54-.12.2-.24.44-.37.6-.12.16-.25.34-.12.67.13.34.57 1.12 1.22 1.8.85.88 1.56 1.17 1.8 1.3.24.13.38.11.52-.07.13-.18.55-.64.7-.86.15-.22.3-.18.5-.11.2.07 1.27.6 1.5.71.23.12.38.18.44.28.06.1.06.58-.18 1.26z"/>
+  </svg>
+</a>
+
+<!-- BACK TO TOP CIRCULAR INDICATOR WITH CHEVRON -->
+<button id="backToTopIndicator" class="fixed bottom-6 right-4 z-50 w-12 h-12 md:w-14 md:h-14  text-[#DAB683] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
+  <svg class="absolute w-8 h-8 md:w-10 md:h-10" viewBox="0 0 36 36">
+    <!-- Background circle -->
+    <path class="circle-bg" d="M18 2.0845
+      a 15.9155 15.9155 0 0 1 0 31.831
+      a 15.9155 15.9155 0 0 1 0 -31.831" 
+      fill="none" stroke="#DAB683" stroke-width="2" stroke-opacity="0.2"/>
+    <!-- Progress circle -->
+    <path class="circle" d="M18 2.0845
+      a 15.9155 15.9155 0 0 1 0 31.831
+      a 15.9155 15.9155 0 0 1 0 -31.831" 
+      fill="none" stroke="#DAB683" stroke-width="2" stroke-linecap="round" stroke-dasharray="0, 100"/>
+  </svg>
+  <!-- Chevron inside -->
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-5 h-5 md:w-6 md:h-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+  </svg>
+</button>
+
+<!-- JS for Scroll Progress & Smooth Scroll -->
+<script>
+const backBtn = document.getElementById('backToTopIndicator');
+const circle = backBtn.querySelector('.circle');
+
+backBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  circle.setAttribute('stroke-dasharray', `${scrollPercent}, 100`);
+});
+</script>
+
+
+<!-- JS for Smooth Scroll -->
+<script>
+  const backToTop = document.getElementById('backToTop');
+
+  // Scroll to top on click
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Show button after scrolling down 200px
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTop.style.opacity = '1';
+      backToTop.style.pointerEvents = 'auto';
+    } else {
+      backToTop.style.opacity = '0';
+      backToTop.style.pointerEvents = 'none';
+    }
+  });
+
+  // Initial state
+  backToTop.style.opacity = '0';
+  backToTop.style.transition = 'opacity 0.3s ease';
+  backToTop.style.pointerEvents = 'none';
+</script>
+
+
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const elements = document.querySelectorAll('.fade-up');
+  const revealOnScroll = () => {
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) el.classList.add('show');
+    });
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+
+  // MOBILE MENU SLIDE-IN
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenu = document.getElementById('closeMenu');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-full');
+  });
+
+  closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.add('translate-x-full');
+  });
+</script>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const elements = document.querySelectorAll('.fade-up');
+  const revealOnScroll = () => {
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) el.classList.add('show');
+    });
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+</script>
+
+</body>
+</html>
+
+

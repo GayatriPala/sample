@@ -1,0 +1,120 @@
+<!-- HERO SECTION -->
+<section class="relative w-full h-[100vh]">
+  <img src="hero.jpg" alt="AYURA Hero" class="w-full h-full object-cover brightness-75">
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-ayuraCream px-4">
+    <h1 class="text-4xl md:text-6xl font-optima font-bold mb-6">Luxury Aesthetic Care, At Your Doorstep</h1>
+    <a href="#book" class="px-8 py-4 bg-[#8f4315] hover:bg-[#a96332] text-[#f3d3b8] rounded-full font-semibold text-lg shadow-lg transition">Book an Appointment</a>
+  </div>
+</section>
+<!-- AYURA STORY SECTION -->
+<section class="bg-[#281304] text-[#f3d3b8] py-20 px-6 md:px-20">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#a96332]">Who We Are</h2>
+    <p class="text-lg leading-relaxed">AYURA Home Services brings premium aesthetic care directly to your doorstep. We provide expert skin, hair, and IV therapy treatments with the same safety, precision, and luxury as our clinic.</p>
+
+    <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#a96332]">Our Mission</h2>
+    <p class="text-lg leading-relaxed">Our mission is to make aesthetic wellness convenient, comfortable, and deeply personalised. From professional treatments at home to certified aestheticians and hospital-grade hygiene, we ensure every experience is seamless, private, and results-driven.</p>
+
+    <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#a96332]">Our Story</h2>
+    <p class="text-lg leading-relaxed">AYURA began with the vision to blend clinical expertise with spa-like comfort. What started as a small dream has grown into a complete home-aesthetic service experience. Every service is designed to rejuvenate, restore, and enhance your natural beauty—right at your doorstep.</p>
+  </div>
+</section>
+
+
+<!-- ===== Why Choose Us Section ===== -->
+<section class="w-full bg-[#281304] py-12 px-6 md:px-20 text-center rounded-2xl my-10">
+  <h1 class="text-3xl md:text-4xl font-serif font-bold text-[#a96332] mb-4">
+    Why Choose Us?
+  </h1>
+  <p class="text-lg md:text-xl text-[#f3d3b8] max-w-3xl mx-auto leading-relaxed">
+    Premium aesthetic care brought directly to your doorstep. Expert skin, hair, and body treatments 
+    designed for convenience, comfort, and visible results, all with certified professionals and 
+    hospital-grade hygiene.
+  </p>
+</section>
+
+
+
+<!-- ===== Custom Responsive Square Carousel ===== -->
+<section class="w-full flex justify-center my-10 px-4">
+    
+  <div class="relative w-[420px] sm:w-[320px] h-[420px] sm:h-[320px] overflow-hidden rounded-2xl shadow-xl" id="squareCarousel">
+    <!-- Track -->
+    <div class="carousel-track flex h-full w-full transition-transform duration-500">
+      <div class="carousel-slide w-full h-full flex-shrink-0">
+        <img src="image1.jpg" class="w-full h-full object-cover" />
+      </div>
+      <div class="carousel-slide w-full h-full flex-shrink-0">
+        <img src="image2.jpg" class="w-full h-full object-cover" />
+      </div>
+      <div class="carousel-slide w-full h-full flex-shrink-0">
+        <img src="image3.jpg" class="w-full h-full object-cover" />
+      </div>
+    </div>
+
+    <!-- Left & Right Arrows -->
+    <button id="prevBtn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white text-black px-2 py-1 rounded-full font-bold text-xl sm:text-lg">❮</button>
+    <button id="nextBtn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white text-black px-2 py-1 rounded-full font-bold text-xl sm:text-lg">❯</button>
+
+    <!-- Indicators -->
+    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+      <div class="dot w-3 h-3 bg-white/50 rounded-full cursor-pointer"></div>
+      <div class="dot w-3 h-3 bg-white/50 rounded-full cursor-pointer"></div>
+      <div class="dot w-3 h-3 bg-white/50 rounded-full cursor-pointer"></div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* ===== Custom Responsive Carousel Script ===== */
+const track = document.querySelector("#squareCarousel .carousel-track");
+const slides = document.querySelectorAll("#squareCarousel .carousel-slide");
+const dots = document.querySelectorAll("#squareCarousel .dot");
+let currentIndex = 0;
+
+// Function to get slide width dynamically
+function getSlideWidth() {
+  return document.querySelector("#squareCarousel").clientWidth;
+}
+
+// Update carousel position
+function updateCarousel() {
+  const slideWidth = getSlideWidth();
+  track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  dots.forEach((dot, i) => {
+    dot.style.background = i === currentIndex ? "white" : "rgba(255,255,255,0.4)";
+  });
+}
+
+// Arrow buttons
+document.getElementById("nextBtn").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateCarousel();
+});
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateCarousel();
+});
+
+// Dot click jump
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    currentIndex = i;
+    updateCarousel();
+  });
+});
+
+// Auto-slide
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateCarousel();
+}, 3500);
+
+// Handle window resize
+window.addEventListener("resize", updateCarousel);
+
+// Initialize
+updateCarousel();
+</script>
