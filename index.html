@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AYURA — Skin & Aesthetics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+  serif: ['Playfair Display', 'serif'],
+  body: ['Inter', 'sans-serif'],
+  optima: ['"Optima Pro Medium"', 'sans-serif'], // added here
+}
+,
+          colors: {
+            ayuraBrown: '#1a0f0a',
+            ayuraGold: '#c69c6d',
+            ayuraCream: '#f5e8d8',
+            ayuraSoft: '#e7d2b8'
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .fade-up { opacity: 0; transform: translateY(20px); transition: all .8s ease; }
+    .fade-up.show { opacity: 1; transform: translateY(0); }
+      /* Moving gradient blobs */
+    @keyframes float1 { 0%{transform:translate(0,0);} 50%{transform:translate(40px, -60px);} 100%{transform:translate(0,0);} }
+    @keyframes float2 { 0%{transform:translate(0,0);} 50%{transform:translate(-50px,40px);} 100%{transform:translate(0,0);} }
+    @keyframes float3 { 0%{transform:translate(0,0);} 50%{transform:translate(60px,20px);} 100%{transform:translate(0,0);} }
+  </style>
+</head>
+<body class="bg-ayuraBrown text-ayuraCream font-body relative overflow-x-hidden">
+<h1 class="font-optima"></h1>
+
+
+<!-- PREMIUM MOVING BACKGROUND BLOBS LIKE UNCOVER -->
+<div class="pointer-events-none fixed -top-40 -left-40 w-[520px] h-[520px] bg-[#d8ac6f55] rounded-full blur-[180px] opacity-50 animate-[float1_10s_ease-in-out_infinite]"></div>
+<div class="pointer-events-none fixed top-1/3 right-[-220px] w-[480px] h-[480px] bg-[#f5e8d855] rounded-full blur-[200px] opacity-50 animate-[float2_12s_ease-in-out_infinite]"></div>
+<div class="pointer-events-none fixed bottom-[-240px] left-1/4 w-[640px] h-[640px] bg-[#c69c6d44] rounded-full blur-[210px] opacity-40 animate-[float3_14s_ease-in-out_infinite]"></div>
+
+<!-- NAVBAR -->
+<header class="absolute top-4 left-4 right-4 bg-[#E4BC93]/80 text-[#5b2b0e] backdrop-blur-xl z-50 border border-[#5D3C62]/20 rounded-[1.75rem]">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+  <a href="index.html">
+  <img src="logo.png" alt="AYURA Logo" class="w-[10rem] h-auto object-contain" />
+</a>
+
+
+  <!-- <h1 class="font-serif text-xl tracking-wide text-[#5b2b0e]">AYURA</h1> -->
+</div>
+
+
+    <!-- Navigation + Book Now (Desktop) -->
+    <div class="hidden md:flex items-center gap-8">
+      <nav class="hidden md:flex items-center gap-10 text-sm font-medium">
+
+    <!-- Dropdown style (UNCOVER-style) -->
+    <!-- Navigation Buttons -->
+<div class="nav-buttons">
+  <a href="#" class="btn2">LASER</a>
+  <a href="skin.html" class="btn2">SKIN</a>
+  <a href="hair.html" class="btn2">HAIR</a>
+  <a href="ivdrips.html" class="btn2">BODY</a>
+  <a href="#" class="btn2">LOCATIONS</a>
+  <a href="#" class="btn2">ABOUT US</a>
+  <a href="#" class="btn2">BLOGS</a>
+</div>
+
+<style>
+/* Global box-sizing and border defaults */
+*, ::after, ::before {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+}
+
+/* Reset links */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Button style (keeps original font) */
+.btn2 {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--size-10, 10px); /* same as original snippet */
+    padding: 10px 20px;
+    color: #5b2b0e;
+    font-weight: bolder; /* original font weight */
+    text-decoration: none; /* original snippet */
+    border-radius: 6px;
+    transition: color 0.4s ease; /* slow color change */
+}
+
+/* Underline effect from center */
+.btn2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 2px; /* reduce gap between text and underline */
+    width: 0%;
+    height: 2px;
+    background-color: #5b2b0e;
+    transform: translateX(-50%);
+    transition: width 0.6s ease; /* slower underline animation */
+}
+
+/* Hover state */
+.btn2:hover {
+    color: black; /* text color on hover */
+}
+
+.btn2:hover::after {
+    width: 100%;
+}
+</style>
+
+
+      
+
+    </div>
+    
+<!-- <div class="flex gap-4 justify-end">
+  <a href="#locations" class="text-[#5b2b0e] hover:text-black transition">Locations</a>
+  <a href="#about" class="text-[#5b2b0e] hover:text-black transition">About Us</a>
+  <a href="#blog" class="text-[#5b2b0e] hover:text-black transition">Media & Blog</a>
+</div> -->
+
+
+
+     <a href="#book" class="ml-6 px-6 py-2 bg-[#5b2b0e] text-[#DAB683] rounded-full font-semibold shadow hover:bg-[#3f1a0d] hover:scale-105 transition hidden sm:inline-block">
+    Book Now
+</a>
+
+  </nav>
+
+    <!-- Mobile Toggle Button -->
+    <button id="menuToggle" class="md:hidden p-3 bg-white/20 rounded-full backdrop-blur-xl border border-white/20">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5m-16.5 6.75h16.5" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+
+<!-- MOBILE MENU (Slide From Right) -->
+<div id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-[#5b2b0e]/95 backdrop-blur-xl border-l border-white/10 z-50 transform translate-x-full transition-transform duration-300 md:hidden">
+  <div class="p-6 flex flex-col gap-6 text-lg tracking-wide text-[#DAB683]">
+    <a href="#home" class="hover:text-[#DAB683] transition">Home</a>
+    <a href="#services" class="hover:text-[#DAB683] transition">Services</a>
+    <a href="#about" class="hover:text-[#DAB683] transition">About</a>
+    <a href="#contact" class="hover:text-[#DAB683] transition">Contact</a>
+    <button id="closeMenu" class="mt-6 px-6 py-2 bg-[#DAB683] text-[#5b2b0e] rounded-full font-semibold shadow hover:scale-105 transition">Close</button>
+  </div>
+</div>
+
+<!-- HERO WITH PREMIUM BACKGROUND LIKE UNCOVER -->
+<section id="home" class="h-screen flex items-center justify-center relative overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80" class="absolute inset-0 w-full h-full object-cover opacity-40" />
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/80"></div>
+
+  <div class="relative max-w-4xl text-center fade-up">
+    <h1 class="font-serif text-5xl md:text-6xl mb-6">Redefining Aesthetic Wellness</h1>
+    <p class="text-lg text-ayuraSoft max-w-2xl mx-auto mb-8">Premium IV drips, chemical peels, and PRP hair restoration — crafted for visible, lasting results.</p>
+    <a href="#services" class="px-8 py-3 bg-ayuraGold text-ayuraBrown rounded-full font-semibold shadow-lg hover:scale-105 transition">Explore Services</a>
+  </div>
+</section>
+
+<!-- BEIGE PREMIUM SECTION LIKE UNCOVER -->
+<section class="py-28 bg-ayuraCream text-ayuraBrown relative overflow-hidden">
+
+  <!-- subtle glow blobs -->
+  <div class="pointer-events-none absolute -top-40 -left-40 w-[380px] h-[380px] bg-[#c69c6d50] rounded-full blur-[140px]"></div>
+  <div class="pointer-events-none absolute bottom-[-120px] right-[-160px] w-[420px] h-[420px] bg-[#d8ac6f40] rounded-full blur-[160px]"></div>
+
+  <div class="max-w-6xl mx-auto px-6 text-center fade-up">
+    <h2 class="font-serif text-5xl mb-6 tracking-tight">Holistic Aesthetic Care — At Your Doorstep</h2>
+    <p class="max-w-2xl mx-auto text-lg text-[#3d2c22] opacity-80 mb-12">
+      AYURA brings premium skin & aesthetic treatments directly to your home.
+      Enjoy clinical-grade safety, luxurious comfort and personalised care —  
+      without ever stepping outside.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-10 mt-10">
+
+
+      <!-- CARD 1 — HOME SERVICE ICON -->
+      <div class="p-10 rounded-3xl bg-white shadow-xl border border-[#00000010] hover:-translate-y-2 transition-all duration-300 fade-up">
+
+        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-[#dab68320]">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+           viewBox="0 0 24 24" stroke-width="1.5" stroke="#5b2b0e"
+           class="w-10 h-10">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 10.5l9-7 9 7M4.5 9.75V19.5A1.5 1.5 0 006 21h12a1.5 1.5 0 001.5-1.5V9.75" />
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9 21v-6a3 3 0 016 0v6" />
+          </svg>
+        </div>
+
+        <h3 class="text-2xl font-semibold mb-3">Expert Home Treatments</h3>
+        <p class="text-sm text-[#5a4a3f] opacity-80">
+          Professional aesthetic care brought directly to your home with clinical-grade equipment.
+        </p>
+      </div>
+
+
+      <!-- CARD 2 — SPA / BEAUTY ICON -->
+      <div class="p-10 rounded-3xl bg-white shadow-xl border border-[#00000010] hover:-translate-y-2 transition-all duration-300 fade-up">
+
+        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-[#dab68320]">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+           viewBox="0 0 24 24" stroke-width="1.5" stroke="#5b2b0e"
+           class="w-10 h-10">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 3c1.657 0 3 1.79 3 4s-1.343 4-3 4-3-1.79-3-4 1.343-4 3-4zm0 8c-4.418 0-8 2.686-8 6v1h16v-1c0-3.314-3.582-6-8-6z" />
+          </svg>
+        </div>
+
+        <h3 class="text-2xl font-semibold mb-3">Luxury Spa-Like Comfort</h3>
+        <p class="text-sm text-[#5a4a3f] opacity-80">
+          Relax in a calming, spa-inspired setup created right inside your home.
+        </p>
+      </div>
+
+
+      <!-- CARD 3 — FACE OUTLINE ICON -->
+      <div class="p-10 rounded-3xl bg-white shadow-xl border border-[#00000010] hover:-translate-y-2 transition-all duration-300 fade-up">
+
+        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-[#dab68320]">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+           viewBox="0 0 24 24" stroke-width="1.5" stroke="#5b2b0e"
+           class="w-10 h-10">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 9.75c0-2.071-1.679-3.75-3.75-3.75S8.25 7.679 8.25 9.75c0 2.07 1.679 3.75 3.75 3.75s3.75-1.68 3.75-3.75z" />
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4.5 19.5c1.5-3 4.5-4.5 7.5-4.5s6 1.5 7.5 4.5" />
+          </svg>
+        </div>
+
+        <h3 class="text-2xl font-semibold mb-3">Personalised Skin Plans</h3>
+        <p class="text-sm text-[#5a4a3f] opacity-80">
+          Advance skin mapping & customised treatments designed specifically for your goals.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<style>
+/* TABS */
+.service-tab {
+  padding: 10px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  border: 2px solid #462302;
+  color: #25120c;
+  background: #c18468;
+  transition: 0.3s;
+}
+.service-tab.active-tab {
+  background: linear-gradient(135deg, #e3b493, #c5814a);
+  color: #fff;
+  border-color: transparent;
+}
+
+/* OVAL CARD */
+.oval-card {
+  width: 108%;
+    border-radius: 120px;
+    padding: 15px 12px;
+  text-align: center;
+  background: linear-gradient(135deg, #8b4513 0%, #5e3422 40%, #9e7964 100%);
+  color: white;
+  position: relative;
+}
+
+/* IMAGE STYLE */
+.card-img {
+  width: 120px;
+  margin: 0 auto 20px;
+}
+
+/* TITLE */
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* ARROW BUTTON */
+.card-arrow {
+  width: 44px;
+  height: 44px;
+  background: #5B2B0E;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 0;
+  font-size: 20px;
+  color: #FBE4D9;
+  transition: 0.3s;
+}
+.card-arrow:hover {
+  transform: scale(1.1);
+}
+
+/* LAYOUT FIXES */
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+</style>
+
+<section id="services" class="py-24 bg-[#FBE4D9]">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    
+    <h2 class="font-serif text-4xl mb-4 text-[#5B2B0E]">Our Services</h2>
+    <p class="text-[#7B456A] max-w-3xl mx-auto mb-12">
+      We specialize in advanced dermatology & aesthetic treatments to help you achieve flawless, radiant skin.
+    </p>
+
+    <!-- Tabs -->
+    <div class="flex justify-center gap-3 mb-12">
+      <button class="service-tab active-tab" data-tab="skin">SKIN</button>
+      <button class="service-tab" data-tab="iv">IV-DRIPS</button>
+      <button class="service-tab" data-tab="body">HAIR</button>
+    </div>
+
+    <!-- SKIN TAB -->
+    <div class="tab-pane active" id="skin">
+      <div class="grid md:grid-cols-5 gap-10">
+        
+        <a href="skin.html" class="oval-card">
+  <img src="lhr.png" class="card-img" />
+  <h3 class="card-title">Laser Hair Removal</h3>
+  <div class="card-arrow">→</div>
+</a>
+
+<a href="skin.html" class="oval-card">
+  <img src="acnescar.png" class="card-img" />
+  <h3 class="card-title">Acne Scar Treatment</h3>
+  <div class="card-arrow">→</div>
+</a>
+
+<a href="skin.html" class="oval-card">
+  <img src="acnepeel.png" class="card-img" />
+  <h3 class="card-title">Anti Scarpeel</h3>
+  <div class="card-arrow">→</div>
+</a>
+
+<a href="skin.html" class="oval-card">
+  <img src="skinligheneing.png" class="card-img" />
+  <h3 class="card-title">Skin Lightening</h3>
+  <div class="card-arrow">→</div>
+</a>
+
+<a href="skin.html" class="oval-card">
+  <img src="antiaaging.png" class="card-img" />
+  <h3 class="card-title">Anti-Ageing</h3>
+  <div class="card-arrow">→</div>
+</a>
+
+
+      </div>
+    </div>
+
+    <!-- IV DRIPS TAB -->
+    <!-- IV-DRIPS TAB -->
+<div class="tab-pane" id="iv">
+  <div class="grid md:grid-cols-5 gap-10">
+
+    <a href="ivdrips.html" class="oval-card">
+  <img src="glamour.png" class="card-img" />
+  <h3 class="card-title">Glamour Drip</h3>
+  <div class="card-arrow">→</div>
+</a>
+
+<a href="ivdrips.html" class="oval-card">
+  <img src="Renew.png" class="card-img" />
+  <h3 class="card-title">Renew Drip</h3>
+  <div class="card-arrow">→</div>
+</a>
+
+<a href="ivdrips.html" class="oval-card">
+  <img src="radiance.png" class="card-img" />
+  <h3 class="card-title">Radiance Drip</h3>
+  <div class="card-arrow">→</div>
+</a>
+
+<a href="ivdrips.html" class="oval-card">
+  <img src="Refuel.png" class="card-img" />
+  <h3 class="card-title">Refuel Drip</h3>
+  <div class="card-arrow">→</div>
+</a>
+
+<a href="ivdrips.html" class="oval-card">
+  <img src="reactivate.png" class="card-img" />
+  <h3 class="card-title">Reactivate Drip</h3>
+  <div class="card-arrow">→</div>
+</a>
+
+
+  </div>
+</div>
+
+    <!-- BODY TAB -->
+    <!-- HAIR TAB -->
+<div class="tab-pane" id="body">
+  <div class="grid md:grid-cols-5 gap-10">
+
+    <a href="hair.html" class="oval-card">
+  <img src="hair1.png" class="card-img" />
+  <h3 class="card-title">PRP Hair Therapy</h3>
+  <div class="card-arrow">→</div>
+</a>
+
+<a href="hair.html" class="oval-card">
+  <img src="hair2.png" class="card-img" />
+  <h3 class="card-title">Hair Fall Control</h3>
+  <div class="card-arrow">→</div>
+</a>
+
+<a href="hair.html" class="oval-card">
+  <img src="hair3.png" class="card-img" />
+  <h3 class="card-title">Dandruff Treatment</h3>
+  <div class="card-arrow">→</div>
+</a>
+
+<a href="hair.html" class="oval-card">
+  <img src="hair4.png" class="card-img" />
+  <h3 class="card-title">Hair Regrowth Therapy</h3>
+  <div class="card-arrow">→</div>
+</a>
+
+<a href="hair.html" class="oval-card">
+  <img src="hair5.png" class="card-img" />
+  <h3 class="card-title">Scalp Detox</h3>
+  <div class="card-arrow">→</div>
+</a>
+
+
+  </div>
+</div>
+
+  </div>
+</section>
+
+<script>
+// TAB FUNCTIONALITY
+document.querySelectorAll(".service-tab").forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll(".service-tab").forEach(t => t.classList.remove("active-tab"));
+    document.querySelectorAll(".tab-pane").forEach(p => p.classList.remove("active"));
+
+    btn.classList.add("active-tab");
+    document.getElementById(btn.dataset.tab).classList.add("active");
+  };
+});
+</script>
+
+
+<!-- ABOUT -->
+<section id="about" class="py-24 bg-white/5 backdrop-blur-xl border-y border-white/10">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    
+    <div class="fade-up">
+      <h2 class="font-serif text-4xl mb-6">AYURA Home Services</h2>
+      <p class="text-ayuraSoft mb-4">
+        Experience premium aesthetic care without stepping out.  
+        AYURA brings expert skin, hair, and IV therapy treatments  
+        directly to your doorstep—with the same safety, precision,  
+        and luxury as our clinic.
+      </p>
+
+      <ul class="space-y-3 text-ayuraSoft">
+        <li>✔ Professional Treatments at Your Home</li>
+        <li>✔ Certified Aestheticians & Medical Experts</li>
+        <li>✔ Hospital-Grade Hygiene & Sterile Setup</li>
+        <li>✔ Convenient, Time-Saving & Privacy-Focused</li>
+      </ul>
+    </div>
+
+    <img
+      src="services.png"
+      class="rounded-2xl shadow-xl fade-up"
+    />
+  </div>
+</section>
+
+
+<!-- STORY TWO-COLUMN UNCOVER STYLE -->
+<section class="py-28 bg-white/10 backdrop-blur-xl border-y border-white/10">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+
+    <div class="fade-up">
+      <h2 class="font-serif text-5xl mb-6">Our Story</h2>
+
+      <p class="text-ayuraSoft mb-6 leading-relaxed">
+        AYURA began with a simple but powerful intention — to make premium aesthetic care 
+        accessible, comfortable, and deeply personalised. Instead of asking clients to visit 
+        a clinic, we wanted to bring luxury wellness directly to them.
+      </p>
+
+      <p class="text-ayuraSoft leading-relaxed">
+        What started as a small vision has grown into a complete home-aesthetic service 
+        experience. From skin and hair treatments to IV drips, every service at AYURA is 
+        designed to blend clinical expertise with spa-like comfort — right at your doorstep.
+      </p>
+    </div>
+
+    <img 
+      src="ourstory.png" 
+      class="rounded-3xl shadow-2xl fade-up"
+    />
+  </div>
+</section>
+
+
+<!-- MARQUEE SLIDER LIKE UNCOVER -->
+<section class="pt-4 pb-8 bg-ayuraBrown/40 border-y border-white/10 overflow-hidden">
+  <div class="whitespace-nowrap animate-[marquee_18s_linear_infinite] text-5xl font-serif opacity-70">
+    <span class="mx-10">Aesthetic Wellness</span>
+    <span class="mx-10">Premium IV Drips</span>
+    <span class="mx-10">Skin Rejuvenation</span>
+    <span class="mx-10">PRP Hair Therapy</span>
+    <span class="mx-10">Chemical Peels</span>
+    <span class="mx-10">Botanical Glow</span>
+  </div>
+</section>
+
+
+<style>
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
+
+<!-- PREMIUM TESTIMONIALS -->
+<section class="py-28 bg-ayuraCream text-ayuraBrown relative">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="font-serif text-5xl mb-4">What Clients Say</h2>
+    <p class="text-[#3d2c22] opacity-80 mb-12">Real stories from real transformations.</p>
+
+    <div class="grid md:grid-cols-3 gap-10">
+
+      <div class="p-8 bg-white rounded-3xl shadow-xl border border-[#00000010] fade-up">
+        <p class="text-[#3d2c22] mb-4 italic">“The IV drip gave me instant energy. Loved the ambience and care!”</p>
+        <h4 class="font-semibold">— Sanjana</h4>
+      </div>
+
+      <div class="p-8 bg-white rounded-3xl shadow-xl border border-[#00000010] fade-up">
+        <p class="text-[#3d2c22] mb-4 italic">“My pigmentation improved in just 3 visits. Highly professional staff.”</p>
+        <h4 class="font-semibold">— Kavya</h4>
+      </div>
+
+      <div class="p-8 bg-white rounded-3xl shadow-xl border border-[#00000010] fade-up">
+        <p class="text-[#3d2c22] mb-4 italic">“PRP actually worked for me! Very gentle and skilled practitioners.”</p>
+        <h4 class="font-semibold">— Rahul</h4>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STICKY CTA BAR -->
+<div class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[90%] md:w-auto bg-ayuraGold text-ayuraBrown px-6 py-3 rounded-full shadow-xl flex items-center justify-center gap-4 z-50">
+  <span class="font-semibold tracking-wide">Book Your Consultation Today</span>
+  <a href="#contact" class="bg-white text-ayuraBrown px-4 py-1 rounded-full font-semibold hover:scale-105 transition">Book</a>
+</div>
+
+<!-- LONG SCROLLING VISION SECTION -->
+<section class="py-32 bg-white/5 backdrop-blur-xl border-y border-white/10">
+  <div class="max-w-5xl mx-auto px-6 fade-up">
+    <h2 class="font-serif text-5xl mb-6">Our Vision • Approach • Philosophy</h2>
+
+    <div class="space-y-10 text-ayuraSoft leading-relaxed">
+
+      <p>
+        At AYURA, our vision is simple — to make advanced aesthetic care effortlessly 
+        accessible. We believe that premium skin, hair, and wellness treatments should 
+        reach you wherever you are, without compromising on expertise, luxury, or safety.
+      </p>
+
+      <p>
+        Our approach is built around personalised home care. From the moment you book a 
+        service, our experts create a customised treatment plan, arrive with hospital-grade 
+        hygiene standards, and deliver a seamless, comfortable experience right at your 
+        doorstep.
+      </p>
+
+      <p>
+        We believe true beauty is authentic. Our philosophy focuses on enhancing your natural 
+        features through safe, evidence-based treatments while respecting your privacy, time, 
+        and comfort — all within the warmth of your own home.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="py-24">
+  <div class="max-w-4xl mx-auto px-6 text-center fade-up">
+    <h2 class="font-serif text-4xl mb-6">Book a Consultation</h2>
+    <p class="text-ayuraSoft mb-10">Fill in your details and our team will contact you instantly on WhatsApp.</p>
+
+    <form id="whatsappForm" class="grid gap-4 max-w-xl mx-auto">
+      <input id="name" class="p-3 bg-white/5 border border-white/10 rounded-lg" placeholder="Full Name" required />
+      <input id="email" class="p-3 bg-white/5 border border-white/10 rounded-lg" placeholder="Email" required />
+      <input id="phone" class="p-3 bg-white/5 border border-white/10 rounded-lg" placeholder="Phone" required />
+
+      <select id="service" class="p-3 bg-white/5 border border-white/10 rounded-lg" required>
+        <option value="">Select Service</option>
+        <option>IV Drips</option>
+        <option>Chemical Peel</option>
+        <option>PRP for Hair</option>
+      </select>
+
+      <button type="submit" class="mt-4 bg-ayuraGold text-ayuraBrown py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition">
+        Submit
+      </button>
+    </form>
+  </div>
+</section>
+
+<script>
+document.getElementById("whatsappForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = encodeURIComponent(document.getElementById("name").value);
+  const email = encodeURIComponent(document.getElementById("email").value);
+  const phone = encodeURIComponent(document.getElementById("phone").value);
+  const service = encodeURIComponent(document.getElementById("service").value);
+
+  // Your WhatsApp Number (country code + number, no + or 0)
+  const whatsappNumber = "919182830417"; // Replace with your number
+
+  const message = `Hello,%0A%0ANew Consultation Request:%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}`;
+
+  // Redirect to WhatsApp
+  window.location.href = `https://wa.me/${whatsappNumber}?text=${message}`;
+});
+</script>
+
+
+<!-- UNCOVER‑STYLE PREMIUM FOOTER -->
+<footer class="bg-ayuraBrown/60 backdrop-blur-xl border-t border-white/10 py-20 text-ayuraCream">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+
+    <!-- LOGO + DESCRIPTION -->
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <a href="/">
+  <img src="logo.png" alt="AYURA Logo" class="w-[10rem] h-auto object-contain" />
+</a>
+
+      </div>
+      <p class="text-sm text-ayuraSoft/80 leading-relaxed max-w-xs">Where luxury meets science. Premium aesthetic treatments designed to enhance natural beauty.</p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div>
+      <h4 class="font-serif text-xl mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-ayuraSoft/80 text-sm">
+        <li><a href="#home" class="hover:text-ayuraGold transition">Home</a></li>
+        <li><a href="#services" class="hover:text-ayuraGold transition">Services</a></li>
+        <li><a href="#about" class="hover:text-ayuraGold transition">About</a></li>
+        <li><a href="#contact" class="hover:text-ayuraGold transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div>
+      <h4 class="font-serif text-xl mb-4">Treatments</h4>
+      <ul class="space-y-2 text-ayuraSoft/80 text-sm">
+        <li>IV Drips</li>
+        <li>Chemical Peels</li>
+        <li>PRP for Hair</li>
+        <li>Skin Rejuvenation</li>
+      </ul>
+    </div>
+
+    <!-- CONTACT INFO -->
+    <div>
+      <h4 class="font-serif text-xl mb-4">Connect</h4>
+      <p class="text-sm text-ayuraSoft/80">Email: support@ayura.com</p>
+      <p class="text-sm text-ayuraSoft/80">Phone: +91 98765 43210</p>
+      <p class="text-sm text-ayuraSoft/80">Hyderabad, India</p>
+      <div class="flex gap-4 mt-4 text-ayuraGold">
+        <span class="cursor-pointer hover:scale-110 transition">Instagram</span>
+        <span class="cursor-pointer hover:scale-110 transition">Facebook</span>
+        <span class="cursor-pointer hover:scale-110 transition">YouTube</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM COPYRIGHT -->
+  <div class="text-center mt-14 text-xs text-ayuraSoft/70">
+    © <span id="year"></span> AYURA Skin & Aesthetics. All Rights Reserved.
+  </div>
+</footer>
+<!-- WHATSAPP CTA -->
+<a href="https://wa.me/919876543210" target="_blank" class="fixed bottom-20 right-4 z-50 w-12 h-12 md:w-14 md:h-14 bg-[#DAB683] text-[#5b2b0e] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 md:w-7 md:h-7">
+    <path d="M12.04 2C6.48 2 2 6.48 2 12c0 2.1.55 4.06 1.5 5.8L2 22l4.3-1.5c1.72.96 3.65 1.5 5.74 1.5 5.56 0 10.04-4.48 10.04-10S17.6 2 12.04 2zm5.48 14.7c-.24.68-1.37 1.3-1.9 1.39-.49.09-1.1.13-3.3-1.01-2.9-1.55-4.75-4.33-4.89-4.53-.14-.2-1.15-1.47-1.15-2.8s.86-2.1 1.16-2.38c.3-.28.65-.28.87-.28.22 0 .43.01.61.01.2 0 .46-.07.71.53.24.6.8 2.05.87 2.2.08.15.12.33.03.53-.09.2-.13.34-.25.54-.12.2-.24.44-.37.6-.12.16-.25.34-.12.67.13.34.57 1.12 1.22 1.8.85.88 1.56 1.17 1.8 1.3.24.13.38.11.52-.07.13-.18.55-.64.7-.86.15-.22.3-.18.5-.11.2.07 1.27.6 1.5.71.23.12.38.18.44.28.06.1.06.58-.18 1.26z"/>
+  </svg>
+</a>
+
+<!-- BACK TO TOP CIRCULAR INDICATOR WITH CHEVRON -->
+<button id="backToTopIndicator" class="fixed bottom-6 right-4 z-50 w-12 h-12 md:w-14 md:h-14  text-[#DAB683] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
+  <svg class="absolute w-8 h-8 md:w-10 md:h-10" viewBox="0 0 36 36">
+    <!-- Background circle -->
+    <path class="circle-bg" d="M18 2.0845
+      a 15.9155 15.9155 0 0 1 0 31.831
+      a 15.9155 15.9155 0 0 1 0 -31.831" 
+      fill="none" stroke="#DAB683" stroke-width="2" stroke-opacity="0.2"/>
+    <!-- Progress circle -->
+    <path class="circle" d="M18 2.0845
+      a 15.9155 15.9155 0 0 1 0 31.831
+      a 15.9155 15.9155 0 0 1 0 -31.831" 
+      fill="none" stroke="#DAB683" stroke-width="2" stroke-linecap="round" stroke-dasharray="0, 100"/>
+  </svg>
+  <!-- Chevron inside -->
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-5 h-5 md:w-6 md:h-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+  </svg>
+</button>
+
+<!-- JS for Scroll Progress & Smooth Scroll -->
+<script>
+const backBtn = document.getElementById('backToTopIndicator');
+const circle = backBtn.querySelector('.circle');
+
+backBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  circle.setAttribute('stroke-dasharray', `${scrollPercent}, 100`);
+});
+</script>
+
+
+<!-- JS for Smooth Scroll -->
+<script>
+  const backToTop = document.getElementById('backToTop');
+
+  // Scroll to top on click
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Show button after scrolling down 200px
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTop.style.opacity = '1';
+      backToTop.style.pointerEvents = 'auto';
+    } else {
+      backToTop.style.opacity = '0';
+      backToTop.style.pointerEvents = 'none';
+    }
+  });
+
+  // Initial state
+  backToTop.style.opacity = '0';
+  backToTop.style.transition = 'opacity 0.3s ease';
+  backToTop.style.pointerEvents = 'none';
+</script>
+
+
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const elements = document.querySelectorAll('.fade-up');
+  const revealOnScroll = () => {
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) el.classList.add('show');
+    });
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+
+  // MOBILE MENU SLIDE-IN
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenu = document.getElementById('closeMenu');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-full');
+  });
+
+  closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.add('translate-x-full');
+  });
+</script>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const elements = document.querySelectorAll('.fade-up');
+  const revealOnScroll = () => {
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) el.classList.add('show');
+    });
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+</script>
+
+</body>
+</html>
